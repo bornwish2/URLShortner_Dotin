@@ -17,6 +17,10 @@ namespace Framework.Domain.Entieis
             ValidateInvariants();
             _events.Add(@event);
         }
+        /// <summary>
+        /// fill entity according by events
+        /// </summary>
+        /// <param name="event"></param>
         protected abstract void SetStateByEvent(IEvent @event);
         public IEnumerable<IEvent> GetEvents() => _events.AsEnumerable();
         public void ClearEvents() => _events.Clear();
