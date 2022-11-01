@@ -1,4 +1,5 @@
 ﻿using Core.ApplicationServices.ShortUrl.CommandHandler;
+using Core.Domain.ShortUrl.Data;
 using ElmahCore.Mvc;
 using ElmahCore.Sql;
 using EventStore.ClientAPI;
@@ -6,6 +7,7 @@ using Framework.ApplicationServices.Common;
 using Framework.Domain.Data;
 using Infrastructure.Data.EventSourcing;
 using Infrastructure.Data.SqlServer;
+using Infrastructure.Data.SqlServer.ShortenUrl;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -43,6 +45,11 @@ namespace Infrastructures.ApplicationServices.WebFramework.Configuration
             var store = new EventSource(esConnection);
             services.AddSingleton(esConnection);
             services.AddSingleton<IEventSource>(store);
+        }
+
+        public static void AddQueryService(this IServiceCollection services)
+        {
+            services.AddScoped<IShortUrlQueryService, ShortUrlQueryService>();
         }
 
         public static void AddMinimalMvc(this IServiceCollection services)

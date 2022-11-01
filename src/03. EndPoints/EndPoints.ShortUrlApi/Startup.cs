@@ -35,6 +35,8 @@ namespace EndPoints.ShortUrlApi
 
             services.AddDbContext(Configuration);
 
+            services.AddQueryService();
+
             services.AddCustomIdentity(_siteSetting.IdentitySettings);
 
             services.AddMinimalMvc();

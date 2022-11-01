@@ -23,10 +23,14 @@ namespace Core.ApplicationServices.ShortUrl.CommandHandler
         }
         public void Handle(SetUrlString command)
         {
-            var ShortUrl = shortUrlRepository.Load(command.Id);
-            if (ShortUrl == null)
-                throw new InvalidOperationException($"لینک با شناسه {command.Id} یافت نشد.");
-            ShortUrl.SetUrlString(URL.FromString(command.UrlString));
+            if (shortUrlRepository.Exists(command.Id))
+                throw new InvalidOperationException($"قبلا لینک با شناسه {command.Id} ثبت شده است.");
+
+            var shortUrl = new Domain.ShortUrl.Entities.ShortUrl(command.Id);
+            shortUrlRepository.Add(shortUrl);
+            unitOfWork.Commit();
+            shortUrl.SetUrlString(URL.FromString(command.UrlString));
+            shortUrl.SetShortUrlString("http://localhost:5164/" + command.Id.ToString());
             unitOfWork.Commit();
         }
     }
