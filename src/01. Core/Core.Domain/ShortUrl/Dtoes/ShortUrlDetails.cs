@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Domain.ShortUrl.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,6 @@ namespace Core.Domain.ShortUrl.Dtoes
         public Guid Id { get; set; }
         public string UrlString { get; set; }
         public string ShortUrlString { get; set; }
-        public ICollection<ReviewDetails> Reviews { get; set; }
+        public ICollection<Review> Reviews { get; set; }
     }
 }
