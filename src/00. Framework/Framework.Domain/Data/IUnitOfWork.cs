@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Domain.ShortUrl.Commands
+namespace Framework.Domain.Data
 {
-    public class Create
+    public interface IUnitOfWork
     {
-        public Guid Id { get; set; }
+        int Commit();
     }
 }
