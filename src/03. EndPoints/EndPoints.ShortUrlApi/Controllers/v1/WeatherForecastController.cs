@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace EndPoints.ShortUrlApi.Controllers
+namespace EndPoints.ShortUrlApi.Controllers.v1
 {
     [ApiController]
     [Route("[controller]")]

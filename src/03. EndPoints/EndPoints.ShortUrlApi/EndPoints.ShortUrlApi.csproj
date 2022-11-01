@@ -19,8 +19,4 @@
     <ProjectReference Include="..\..\02. Infrastructures\ApplicationServices\Infrastructures.ApplicationServices.WebFramework\Infrastructures.ApplicationServices.WebFramework.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\v1\" />
-  </ItemGroup>
-
 </Project>

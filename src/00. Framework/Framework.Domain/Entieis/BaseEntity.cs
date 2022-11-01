@@ -1,6 +1,7 @@
 ﻿using Framework.Domain.Events;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 
@@ -26,6 +27,7 @@ namespace Framework.Domain.Entieis
     //}
     public abstract class BaseEntity<TId> where TId : IEquatable<TId>
     {
+        [Key]
         public TId Id { get; protected set; }
         private Action<IEvent> _applier;
         public BaseEntity(Action<IEvent> applier)
