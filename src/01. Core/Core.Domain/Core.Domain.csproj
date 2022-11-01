@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\00. Framework\Framework.ApplicationServices\Framework.ApplicationServices.csproj" />
     <ProjectReference Include="..\..\00. Framework\Framework.Domain\Framework.Domain.csproj" />
     <ProjectReference Include="..\..\00. Framework\Framework.Tools\Framework.Tools.csproj" />
   </ItemGroup>

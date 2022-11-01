@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infrastructure.Data.SqlServer.Core
+namespace Infrastructure.Data.SqlServer.CoreConf
 {
     public class Repository<TEntity> : IRepository<TEntity>
        where TEntity : class
